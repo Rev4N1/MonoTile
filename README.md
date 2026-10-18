@@ -8,7 +8,7 @@ Android hides the mono audio switch deep inside *Settings → Accessibility → 
 
 - **One-tap toggle** – tap the tile to switch mono audio on or off.
 - **Accurate tile state** – the tile shows active or inactive based on the real system value, not a guess.
-- **Long-press to resync** – long-press the tile to re-read the setting if you changed it somewhere else (for example in Accessibility settings).
+- **Always in sync** – if you change mono audio somewhere else (for example in Accessibility settings), the tile updates by itself. Long-press the tile to force a resync.
 - **Bluetooth aware** – the tile resyncs when a Bluetooth device connects, and mono audio is **turned off automatically when Bluetooth disconnects**, so your phone speaker goes back to stereo.
 
 ## Requirements
@@ -29,7 +29,7 @@ There are two ways to install it. Pick one.
 
 ### Option 2: Tasker project
 
-For people who already use [Tasker](https://tasker.joaoapps.com/) (6.5 or newer) and want to tweak it.
+For people who already use [Tasker](https://tasker.joaoapps.com/) (6.6 or newer) and want to tweak it.
 
 1. Download [`Mono_Audio_QSTile.prj.xml`](Mono_Audio_QSTile.prj.xml) to your phone (open the file on GitHub, then tap **Raw** / the download button).
 2. **Import it into Tasker:** open Tasker, long-press the **home icon** (the house tab at the bottom left), choose **Import Project**, and pick the file.
@@ -39,15 +39,16 @@ For people who already use [Tasker](https://tasker.joaoapps.com/) (6.5 or newer)
 
 ## How it works
 
-MonoTile is built with Tasker; the APK is the same project exported with Tasker App Factory. It contains three tasks and two profiles:
+MonoTile is built with Tasker; the APK is the same project exported with Tasker App Factory. It contains three tasks and three profiles:
 
 | Item | Type | What it does |
 |---|---|---|
 | `Mono-tile_tap` | Task | Reads `master_mono`, flips it (0 ↔ 1), writes it back, then updates the tile. Shows an error message if it couldn't (usually missing root). Runs when you **tap** the tile. |
-| `Mono-tile_sync` | Task | Reads `master_mono` and updates the tile to match. Runs when you **long-press** the tile, at boot, when Bluetooth connects, and when the APK is opened. |
+| `Mono-tile_sync` | Task | Reads `master_mono` and updates the tile to match. Runs when you **long-press** the tile, when the setting changes, at boot, when Bluetooth connects, and when the APK is opened. |
 | `Mono-off` | Task | Forces `master_mono` to `0` (stereo) and updates the tile. Runs when Bluetooth disconnects. |
 | `Mono-bluetooth` | Profile | State: *BT Connected* (any device). Entry task: `Mono-tile_sync`. Exit task: `Mono-off`. |
 | `Mono-boot` | Profile | Event: *Device Boot*. Runs `Mono-tile_sync` so the tile is correct after a restart. |
+| `Mono-setting` | Profile | State: *Custom Setting* (System, `master_mono` = `1`). Entry and exit task: `Mono-tile_sync`, so the tile follows the setting whenever it changes. |
 
 Under the hood it uses the same setting that the Accessibility toggle changes:
 
