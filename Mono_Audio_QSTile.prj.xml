@@ -14,10 +14,22 @@
 			<Str sr="arg1" ve="3"/>
 		</State>
 	</Profile>
+	<Profile sr="prof9106" ve="2">
+		<cdate>1758528000000</cdate>
+		<edate>1758528000000</edate>
+		<flags>8</flags>
+		<id>9106</id>
+		<mid0>9102</mid0>
+		<nme>Mono-boot</nme>
+		<Event sr="con0" ve="2">
+			<code>411</code>
+			<pri>0</pri>
+		</Event>
+	</Profile>
 	<Project sr="proj0" ve="2">
 		<cdate>1758528000000</cdate>
 		<name>Mono Audio QSTile</name>
-		<pids>9105</pids>
+		<pids>9105,9106</pids>
 		<tids>9101,9102,9104</tids>
 		<Img sr="icon" ve="2">
 			<nme>hl_av_hearing</nme>
@@ -42,6 +54,18 @@
 			<Int sr="arg7" val="0"/>
 		</Action>
 		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">MonoTile: couldn't change mono audio. Is root granted?</Str>
+			<Int sr="arg1" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>3</op>
+					<rhs>0/1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
 			<code>162</code>
 			<Int sr="arg0" val="0"/>
 			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
@@ -64,7 +88,7 @@
 				</Condition>
 			</ConditionList>
 		</Action>
-		<Action sr="act2" ve="7">
+		<Action sr="act3" ve="7">
 			<code>162</code>
 			<Int sr="arg0" val="0"/>
 			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
@@ -87,7 +111,7 @@
 				</Condition>
 			</ConditionList>
 		</Action>
-		<Action sr="act3" ve="7">
+		<Action sr="act4" ve="7">
 			<code>137</code>
 			<Int sr="arg0" val="0"/>
 			<Str sr="arg1" ve="3"/>
