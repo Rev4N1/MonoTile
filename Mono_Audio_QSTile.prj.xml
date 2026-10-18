@@ -1,0 +1,236 @@
+<TaskerData sr="" dvi="1" tv="6.5.11">
+	<Profile sr="prof9105" ve="2">
+		<cdate>1758528000000</cdate>
+		<clp>true</clp>
+		<edate>1758528000000</edate>
+		<flags>8</flags>
+		<id>9105</id>
+		<mid0>9102</mid0>
+		<mid1>9104</mid1>
+		<nme>Mono-bluetooth</nme>
+		<State sr="con0" ve="2">
+			<code>3</code>
+			<Str sr="arg0" ve="3"/>
+			<Str sr="arg1" ve="3"/>
+		</State>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1758528000000</cdate>
+		<name>Mono Audio QSTile</name>
+		<pids>9105</pids>
+		<tids>9101,9102,9104</tids>
+		<Img sr="icon" ve="2">
+			<nme>hl_av_hearing</nme>
+		</Img>
+	</Project>
+	<Task sr="task9101">
+		<cdate>1758528000000</cdate>
+		<edate>1758528000000</edate>
+		<id>9101</id>
+		<nme>Mono-tile_tap</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>123</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">v=$(settings get system master_mono); if [ "$v" = "1" ]; then n=0; else n=1; fi; settings put system master_mono $n; settings get system master_mono</Str>
+			<Int sr="arg1" val="5"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">%mono</Str>
+			<Str sr="arg4" ve="3">%err</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>0</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>1</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task9102">
+		<cdate>1758528000000</cdate>
+		<edate>1758528000000</edate>
+		<id>9102</id>
+		<nme>Mono-tile_sync</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>123</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">settings get system master_mono</Str>
+			<Int sr="arg1" val="5"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">%mono</Str>
+			<Str sr="arg4" ve="3">%err</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>0</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>1</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task9104">
+		<cdate>1758528000000</cdate>
+		<edate>1758528000000</edate>
+		<id>9104</id>
+		<nme>Mono-off</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>123</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">settings put system master_mono 0; settings get system master_mono</Str>
+			<Int sr="arg1" val="5"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">%mono</Str>
+			<Str sr="arg4" ve="3">%err</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>0</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Mono-tile_tap</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Mono-tile_sync</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">M</Str>
+			<Str sr="arg8" ve="3">Mono</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mono</lhs>
+					<op>1</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+	</Task>
+</TaskerData>
