@@ -24,8 +24,13 @@ There are two ways to install it. Pick one.
 
 1. Download the latest `MonoTile.apk` from the [**Releases**](../../releases/latest) page.
 2. Install it. Your phone may ask you to allow installs from your browser or file manager.
-3. Open **MonoTile** once and **grant root** when your root manager asks. This also sets up the tile.
-4. Pull down Quick Settings, tap the **edit** (pencil) button, and drag the **MonoTile** tile into your active tiles. Tap to toggle.
+3. Open **MonoTile** once. This sets up the tile.
+4. **Grant root:**
+   - **Magisk:** allow MonoTile when the root prompt appears.
+   - **KernelSU, APatch, ReSukiSU and other KernelSU-based managers:** there is **no prompt**. Open your root manager, allow **MonoTile** in its app list, then force-stop MonoTile (*Settings → Apps → MonoTile → Force stop*) and open it again.
+5. Pull down Quick Settings, tap the **edit** (pencil) button, and drag the **MonoTile** tile into your active tiles. Tap to toggle.
+
+If you also have the Tasker project imported, disable its profiles so Tasker and the app don't both react to the same events.
 
 ### Option 2: Tasker project
 
@@ -73,7 +78,8 @@ You can try these yourself from a root shell to check that your device supports 
 ## Troubleshooting
 
 - **The tile does nothing:** it hasn't been set up yet. Open the MonoTile app once (APK) or run `Mono-tile_sync` in Tasker.
-- **"Couldn't change mono audio. Is root granted?":** check your root manager (e.g. Magisk or KernelSU) and allow MonoTile / Tasker.
+- **"Couldn't change mono audio. Is root granted?":** allow MonoTile (or Tasker) in your root manager. KernelSU-based managers don't prompt, so you have to do it by hand, then force-stop and reopen the app.
+- **The first taps after a force stop or reboot don't respond:** the app is still starting up. Wait a second and tap again.
 - **The state looks wrong:** long-press the tile to resync it.
 - **`settings get system master_mono` prints `null`:** the value has never been set on your device. Toggle mono audio once in Accessibility settings, or just tap the tile (it treats anything other than `1` as off).
 

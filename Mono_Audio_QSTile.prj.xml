@@ -16,7 +16,8 @@
 	</Profile>
 	<Profile sr="prof11" ve="2">
 		<cdate>1792342705230</cdate>
-		<edate>1792342760370</edate>
+		<clp>true</clp>
+		<edate>1792342850393</edate>
 		<flags>8</flags>
 		<id>11</id>
 		<mid0>8</mid0>
@@ -45,10 +46,18 @@
 	<Project sr="proj0" ve="2">
 		<cdate>1758528000000</cdate>
 		<name>Mono Audio QSTile</name>
-		<pids>9,10,11</pids>
+		<pids>11,10,9</pids>
 		<tids>8,7,2</tids>
+		<Kid sr="Kid">
+			<feat0>android.hardware.bluetooth:y</feat0>
+			<launchID>8</launchID>
+			<pkg>com.rev4n.monotile</pkg>
+			<vTarg>29</vTarg>
+			<vnme>1.0</vnme>
+			<vnum>2</vnum>
+		</Kid>
 		<Img sr="icon" ve="2">
-			<nme>hl_av_hearing</nme>
+			<nme>hl_device_access_volume_on</nme>
 		</Img>
 	</Project>
 	<Task sr="task2">
